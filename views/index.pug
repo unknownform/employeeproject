@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.table
+    div Employees
+    div
+      a(href='/add') Add Employee
+  table
+    thead
+      th First
+      th Last
+      th Title
+      th Address
+      th Number
+      th Year Hired
+    tbody
+      each employee in employees
+        tr
+          td= employee.firstname
+          td= employee.lastname
+          td= employee.jobtitle
+          td
+            div #{employee.streetline1}
+            div #{employee.streetline2}
+            div= `${employee.city}, ${employee.state} ${emloyee.zip}`
+          td= employee.phonenumber
+          td= employee.yearhired
