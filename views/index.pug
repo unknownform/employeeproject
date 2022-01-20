@@ -13,6 +13,7 @@ block content
       th Address
       th Number
       th Year Hired
+      th Actions
     tbody
       each employee in employees
         tr
@@ -22,6 +23,10 @@ block content
           td
             div #{employee.streetline1}
             div #{employee.streetline2}
-            div= `${employee.city}, ${employee.state} ${emloyee.zip}`
+            div= `${employee.city}, ${employee.state} ${employee.zip}`
           td= employee.phonenumber
           td= employee.yearhired
+          td
+            div.actions
+              a(href=`/update/${employee.id}`) Edit
+              a(href=`/delete/${employee.id}`) Delete
